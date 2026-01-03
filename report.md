@@ -1,11 +1,22 @@
 # Experimental Results
-A YOLOv8 model was used to perform object detection on a sample road image.
-The model successfully detected objects present in the scene, demonstrating
-the feasibility of applying deep learning to road condition analysis.
+
+A YOLOv8 model was used to detect road anomalies on a sample image.
+The inference pipeline processes images, extracts detections, associates
+each detection with simulated GPS coordinates, and exports the results as GeoJSON.
+
+Performance metrics:
+
+- FPS: measured during inference execution
+- Detection results: qualitative evaluation of bounding boxes
+- GeoJSON output: verified via map visualization
 
 # Analysis and Interpretation
-The experiment shows that modern object detection models can be used as a
-baseline for road degradation detection. The main limitations of this work
-are the use of a small dataset and the lack of task-specific training.
-Future work includes training on annotated road degradation datasets and
-integrating precise GPS-based localization.
+
+The system demonstrates a complete pipeline from detection to geolocation
+and visualization. GPS coordinates were simulated due to the absence of
+real GPS metadata, which is acceptable for a proof-of-concept implementation.
+
+The map dashboard allows spatial inspection of detected anomalies.
+Limitations include the lack of task-specific training data and real GPS
+synchronization. Future work includes training on annotated datasets,
+video-based processing, and accurate geolocation error measurement.
